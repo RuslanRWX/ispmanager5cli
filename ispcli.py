@@ -65,7 +65,7 @@ def main():
     parser.add_argument("--dbs_users",
                         help=Help_dbs_users, action='store_true')
     parser.add_argument("--email_info",
-                        help=Help_email-info)
+                        help=Help_email_info)
     args = parser.parse_args()
 
     if args.users:
