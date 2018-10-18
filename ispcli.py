@@ -60,7 +60,7 @@ def load_email_setting(names, user):
                 for key in head:
                     value = setting[key]
                     if key:
-                        array.update(({key: value.encode("utf-8")}))
+                        array.update(({key: value}))
                     full_data.append(array)
                 print full_data
                 #print setting["passwd"]
