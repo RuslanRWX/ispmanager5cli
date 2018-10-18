@@ -69,7 +69,7 @@ def main():
     parser.add_argument("--user",
                         help=Help_user)
     parser.add_argument("--email",
-                        help=Help_email)
+                        help=Help_email, action='store_true')
     args = parser.parse_args()
 
     if args.users:
