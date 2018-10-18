@@ -58,6 +58,7 @@ def load_email_setting(names, user):
             array={}
             for setting in setting_info_by_user:
                 for key in head:
+                    value = setting[key]
                     if key:
                         array.update(({key: value.encode("utf-8")}))
                     full_data.append(array)
