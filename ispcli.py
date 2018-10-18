@@ -43,13 +43,13 @@ def load_user_email(head, query):
     data = ispmanagerclass.list_data(head)
     return print_data(data.user_email(query), head)
 
-def load_email_setting(names, owner):
+def load_email_setting(names, user):
     query = ispmanagerclass.http_query_isp("email")
     data = ispmanagerclass.list_data(names)
     res = data.list(query)
     for r in res:
-        print (str(["owner"]) +" "+ str(owner))
-        if r["owner"] == owner:
+        print (str(r["owner"]) +" "+ str(user))
+        if r["owner"] == user:
             print (str(r["owner"])+" "+str(r["name"]))
 
 def main():
@@ -120,7 +120,7 @@ def main():
     elif args.user:
         if args.email:
             names = ["owner", "name", "forward"]
-            return load_email_setting(names,args.email)
+            return load_email_setting(names,args.user)
     else:
         parser.print_help()
 
