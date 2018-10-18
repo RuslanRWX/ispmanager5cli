@@ -48,18 +48,20 @@ def load_email_setting(names, user):
     data = ispmanagerclass.list_data(names)
     api_result = data.list(query)
     head = ["name", "elid", "note", "passwd", "forward"]
+    full_data = []
     for api_data in api_result:
         if api_data["owner"] == user:
             data = ispmanagerclass.list_data(head)
             query = ispmanagerclass.URL + "&elid=" + api_data["name"] + "&func=email.edit&out=xml"
             #print (str(api_data["owner"])+" "+str(api_data["name"]))
             setting_info_by_user = data.user_email(query)
+            array={}
             for setting in setting_info_by_user:
                 for key in head:
-                    if setting[key] == "":
-                        setting[key] = "Null"
-                    print str(key) +" "+ str(setting[key])
-
+                    if key:
+                        array.update(({key: value.encode("utf-8")}))
+                    full_data.append(array)
+                print full_data
                 #print setting["passwd"]
 
 
