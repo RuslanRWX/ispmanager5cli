@@ -25,7 +25,7 @@ def print_data(domains, names):
             data.append(local_data)
         table.column_alignments[key] = BeautifulTable.ALIGN_LEFT
         table.append_row([ x for x in data])
-    print table
+    print (table)
 
 
 def load_data(names, query):
@@ -120,16 +120,7 @@ def main():
         if args.email:
             query = ispmanagerclass.http_query_isp("email")
             names = ["owner", "name", "forward"]
-            return load_email_setting(names, query, args.email)
-
-
-            #for r in res:
-            #    if r["owner"] == args.user:
-            #        print r["owner"]+" "+r["name"]
-            #       query = ispmanagerclass.URL + "&elid=" + r["name"] + "&func=email.edit&out=xml"
-
-            #for r in res:
-               #print r['name']
+            return load_email_setting(names,query,args.email)
     else:
         parser.print_help()
 
