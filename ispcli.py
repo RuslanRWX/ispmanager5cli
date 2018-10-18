@@ -48,9 +48,9 @@ def load_email_setting(names, owner):
     data = ispmanagerclass.list_data(names)
     res = data.list(query)
     for r in res:
-        print r["owner"] +" "+ owner
+        print (str(["owner"]) +" "+ str(owner))
         if r["owner"] == owner:
-            print r["owner"]+" "+r["name"]
+            print (str(r["owner"])+" "+str(r["name"]))
 
 def main():
     parser = argparse.ArgumentParser(prog='ispcli', description=Help_desc,
