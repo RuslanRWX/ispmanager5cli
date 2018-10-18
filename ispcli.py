@@ -64,7 +64,7 @@ def main():
                         help=Help_dbs, action='store_true')
     parser.add_argument("--dbs_users",
                         help=Help_dbs_users, action='store_true')
-    parser.add_argument("--email-info",
+    parser.add_argument("--email_info",
                         help=Help_email-info)
     args = parser.parse_args()
 
@@ -101,7 +101,7 @@ def main():
         query = ispmanagerclass.http_query_isp("db")
         names = ["owner","name","key"]
         return load_db_data(names, query)
-    elif args.email-info:
+    elif args.email_info:
         query = ispmanagerclass.URL + "&elid=" + args.useremail + "&func=email.edit&out=xml"
         names = ["name","elid","note","passwd","forward"]
         return load_user_email(names, query)
