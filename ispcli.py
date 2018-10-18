@@ -47,6 +47,7 @@ def load_email_setting(names, query, owner):
     data = ispmanagerclass.list_data(names)
     res = data.list(query)
     for r in res:
+        print r["owner"] +" "+ owner
         if r["owner"] == owner:
             print r["owner"]+" "+r["name"]
 
@@ -119,7 +120,7 @@ def main():
         if args.email:
             query = ispmanagerclass.http_query_isp("email")
             names = ["owner", "name", "forward"]
-            return load_email_setting(names,query,args.email)
+            return load_email_setting(names, query, args.email)
 
 
             #for r in res:
