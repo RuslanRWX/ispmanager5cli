@@ -118,6 +118,10 @@ def main():
             for r in res:
                 if r["owner"] == args.user:
                     print r["owner"]+" "+r["name"]
+                    query = ispmanagerclass.URL + "&elid=" + r["name"] + "&func=email.edit&out=xml"
+                    names = ["name", "elid", "note", "passwd", "forward"]
+                    data = ispmanagerclass.list_data(head)
+                    return print_data(data.user_email(query), head)
             #for r in res:
                #print r['name']
     else:
