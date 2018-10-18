@@ -40,8 +40,9 @@ def request_http_xmltodict(query):
     result = urllib2.Request(query, headers=hdr)
     return xmltodict.parse(urlopen(result).read())
 
-def http_query_user():
-    return URL + "&func=user&out=xml"
+def http_query_isp(func):
+    add = "&func="+ func +"&out=xml"
+    return URL + add
 
 
 

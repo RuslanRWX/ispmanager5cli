@@ -69,7 +69,7 @@ def main():
     args = parser.parse_args()
 
     if args.users:
-        query = ispmanagerclass.http_query_user()
+        query = ispmanagerclass.http_query_isp("user")
         if args.verbosity >=1:
             names = ["user", "name"]
             return load_data(names, query)
