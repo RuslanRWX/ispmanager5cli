@@ -116,7 +116,6 @@ def main():
             data = ispmanagerclass.list_data(names)
             res = data.list(query)
             for r in res:
-                print r["owner"] +" "+ args.user
                 if r["owner"] == args.user:
                     print r["owner"]+" "+r["name"]
             #for r in res:
