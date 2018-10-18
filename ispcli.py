@@ -114,7 +114,9 @@ def main():
             query = ispmanagerclass.http_query_isp("email")
             names = ["name","email"]
             data = ispmanagerclass.list_data(names)
-            print data.list(query)
+            res = data.list(query)
+            for r in res:
+                print r['name']
     else:
         parser.print_help()
 
