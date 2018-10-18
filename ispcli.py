@@ -102,7 +102,7 @@ def main():
         names = ["owner","name","key"]
         return load_db_data(names, query)
     elif args.email_info:
-        query = ispmanagerclass.URL + "&elid=" + args.useremail + "&func=email.edit&out=xml"
+        query = ispmanagerclass.URL + "&elid=" + args.email_info + "&func=email.edit&out=xml"
         names = ["name","elid","note","passwd","forward"]
         return load_user_email(names, query)
     else:
