@@ -120,7 +120,6 @@ def main():
                     print r["owner"]+" "+r["name"]
             #for r in res:
                #print r['name']
-
     else:
         parser.print_help()
 
