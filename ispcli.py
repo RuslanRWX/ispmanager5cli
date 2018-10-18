@@ -121,7 +121,7 @@ def main():
             #for r in res:
             #    if r["owner"] == args.user:
             #        print r["owner"]+" "+r["name"]
-                    query = ispmanagerclass.URL + "&elid=" + r["name"] + "&func=email.edit&out=xml"
+            #        query = ispmanagerclass.URL + "&elid=" + r["name"] + "&func=email.edit&out=xml"
 
             #for r in res:
                #print r['name']
