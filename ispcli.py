@@ -110,7 +110,7 @@ def main():
         names = ["name","elid","note","passwd","forward"]
         return load_user_email(names, query)
     elif args.user:
-        print args.user +":"+ args.email
+        print str(args.user) +":"+ str(args.email)
     else:
         parser.print_help()
 
