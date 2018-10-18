@@ -89,3 +89,13 @@ class list_data():
             if value:
                 array.update({key: value.encode("utf-8")})
         return [array]
+
+    def email_setting(self, api_result, user):
+        array = {}
+        for api_data in api_result:
+            if api_data["owner"] == user:
+                # print (str(api_data["owner"])+" "+str(api_data["name"]))
+                setting_info_by_user = data.user_email(query)
+                for info in setting_info_by_user:
+                    print info["passwd"]
+        #query = ispmanagerclass.URL + "&elid=" + api_data["name"] + "&func=email.edit&out=xml"
