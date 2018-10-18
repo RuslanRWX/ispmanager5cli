@@ -110,7 +110,11 @@ def main():
         names = ["name","elid","note","passwd","forward"]
         return load_user_email(names, query)
     elif args.user:
-        print str(args.user) +":"+ str(args.email)
+        if args.email:
+            query = ispmanagerclass.http_query_isp("email")
+            names = ["name","email"]
+            data = ispmanagerclass.list_data(names)
+            print data.list(query), names)
     else:
         parser.print_help()
 
