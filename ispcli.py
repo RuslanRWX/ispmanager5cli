@@ -56,7 +56,8 @@ def load_email_setting(names, user):
             setting_info_by_user = data.user_email(query)
             for setting in setting_info_by_user:
                 for key in head:
-                    print str(key) +" "+ str(setting[key])
+                    if setting[key]:
+                        print str(key) +" "+ str(setting[key])
 
                 #print setting["passwd"]
 
