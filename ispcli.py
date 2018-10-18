@@ -43,6 +43,12 @@ def load_user_email(head, query):
     data = ispmanagerclass.list_data(head)
     return print_data(data.user_email(query), head)
 
+def load_email_setting(names, query, owner)
+    data = ispmanagerclass.list_data(names)
+    res = data.list(query)
+    for r in res:
+        if r["owner"] == owner:
+            print r["owner"]+" "+r["name"]
 
 def main():
     parser = argparse.ArgumentParser(prog='ispcli', description=Help_desc,
@@ -108,20 +114,18 @@ def main():
     elif args.email_info:
         query = ispmanagerclass.URL + "&elid=" + args.email_info + "&func=email.edit&out=xml"
         names = ["name","elid","note","passwd","forward"]
-        return load_data(names, query)
+        return load_user_email(names, query)
     elif args.user:
         if args.email:
             query = ispmanagerclass.http_query_isp("email")
             names = ["owner", "name", "forward"]
-            data = ispmanagerclass.list_data(names)
-            res = data.list(query)
-
-
+            return load_email_setting(names,query,args.email)
+            
 
             #for r in res:
             #    if r["owner"] == args.user:
             #        print r["owner"]+" "+r["name"]
-            #        query = ispmanagerclass.URL + "&elid=" + r["name"] + "&func=email.edit&out=xml"
+            #       query = ispmanagerclass.URL + "&elid=" + r["name"] + "&func=email.edit&out=xml"
 
             #for r in res:
                #print r['name']
