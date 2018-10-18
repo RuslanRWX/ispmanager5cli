@@ -112,11 +112,13 @@ def main():
     elif args.user:
         if args.email:
             query = ispmanagerclass.http_query_isp("email")
-            names = ["name","email"]
+            names = ["account_id","name","email"]
             data = ispmanagerclass.list_data(names)
             res = data.list(query)
-            for r in res:
-                print r['name']
+            print res
+            #for r in res:
+               #print r['name']
+
     else:
         parser.print_help()
 
