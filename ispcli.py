@@ -77,11 +77,11 @@ def main():
             names = ["name"]
             return load_data(names, query)
     elif args.domains:
-        query = ispmanagerclass.URL+"&func=domain&out=xml"
+        query = ispmanagerclass.http_query_isp("domain")
         names = ["user", "name"]
         return load_data(names, query)
     elif args.webdomains:
-        query = ispmanagerclass.URL +"&func=webdomain&out=xml"
+        query = ispmanagerclass.http_query_isp("webdomain")
         names = ["owner", "name", "docroot", "php",
                  "php_version", "cgi", "active", "ipaddr"]
         return load_data(names,query)
@@ -90,15 +90,15 @@ def main():
         names = ["account_id","name","email"]
         return load_data(names, query)
     elif args.emails:
-        query = ispmanagerclass.URL + "&func=email&out=xml"
+        query = ispmanagerclass.http_query_isp("email")
         names = ["owner","name", "forward"]
         return load_data(names, query)
     elif args.dbs:
-        query = ispmanagerclass.URL + "&func=db&out=xml"
+        query = ispmanagerclass.http_query_isp("db")
         names = ["owner","name","key"]
         return load_data(names, query)
     elif args.dbs_users:
-        query = ispmanagerclass.URL + "&func=db&out=xml"
+        query = ispmanagerclass.http_query_isp("db")
         names = ["owner","name","key"]
         return load_db_data(names, query)
     elif args.useremail:
