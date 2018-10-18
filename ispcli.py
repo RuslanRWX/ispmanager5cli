@@ -61,8 +61,8 @@ def load_email_setting(names, user):
                     value = setting[key]
                     if key:
                         array.update(({key: value}))
-                    full_data.append(array)
-                print full_data
+                full_data.append(array)
+            print full_data
                 #print setting["passwd"]
 
 
