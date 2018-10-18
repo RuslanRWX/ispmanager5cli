@@ -67,7 +67,7 @@ def main():
     parser.add_argument("--email_info",
                         help=Help_email_info)
     parser.add_argument("--user",
-                        hepl=Help_user)
+                        help=Help_user)
     parser.add_argument("--email",
                         help=Help_email)
     args = parser.parse_args()
