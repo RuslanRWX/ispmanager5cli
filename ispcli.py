@@ -101,7 +101,7 @@ def main():
         query = ispmanagerclass.http_query_isp("db")
         names = ["owner","name","key"]
         return load_db_data(names, query)
-    elif args.useremail:
+    elif args.email-info:
         query = ispmanagerclass.URL + "&elid=" + args.useremail + "&func=email.edit&out=xml"
         names = ["name","elid","note","passwd","forward"]
         return load_user_email(names, query)
