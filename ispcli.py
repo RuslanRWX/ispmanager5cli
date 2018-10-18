@@ -116,7 +116,7 @@ def main():
             data = ispmanagerclass.list_data(names)
             res = data.list(query)
             for r in res:
-                print r["name"]+" "+r["email"]
+                print r["name"]
             #for r in res:
                #print r['name']
 
