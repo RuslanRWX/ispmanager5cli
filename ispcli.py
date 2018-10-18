@@ -55,7 +55,8 @@ def load_email_setting(names, user):
             query = ispmanagerclass.URL + "&elid=" + api_data["name"] + "&func=email.edit&out=xml"
             #print (str(api_data["owner"])+" "+str(api_data["name"]))
             setting_info_by_user = data.user_email(query)
-            print str(setting_info_by_user["password"])
+            for info in setting_info_by_user:
+                print info["passwd"]
 
 
             #query = ispmanagerclass.URL + "&elid=" + args.email_info + "&func=email.edit&out=xml"
