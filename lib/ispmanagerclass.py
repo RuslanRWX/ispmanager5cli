@@ -87,5 +87,5 @@ class list_data():
         for key in self.values:
             value = doc["doc"][key]
             if value:
-                array.update({key: value.encode("utf-8")})
+                array.update({key: value})
         return [array]
