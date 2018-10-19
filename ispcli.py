@@ -56,14 +56,15 @@ def load_email_setting(names, user):
             #print (str(api_data["owner"])+" "+str(api_data["name"]))
             setting_info_by_user = data.user_email(query)
             array={}
+
             for setting in setting_info_by_user:
-                for key in head:
-                    value = setting[key]
-                    if key:
-                        array.update(({key: value}))
-                full_data.append(array)
-            print full_data
-                #print setting["passwd"]
+            #    for key in head:
+            #        value = setting[key]
+            #        if key:
+            #            array.update(({key: value}))
+            #    full_data.append(array)
+            #print full_data
+                print "name:"+setting["name"]+"passwd:"+setting["passwd"]
 
 
 
