@@ -76,11 +76,6 @@ def load_email_setting(names, user):
 
 
 
-            #query = ispmanagerclass.URL + "&elid=" + args.email_info + "&func=email.edit&out=xml"
-            #names = ["name", "elid", "note", "passwd", "forward"]
-            #return load_user_email(names, query)
-
-
 def main():
     parser = argparse.ArgumentParser(prog='ispcli', description=Help_desc,
                                      epilog=Hepl_epilog)
