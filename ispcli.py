@@ -64,7 +64,8 @@ def load_email_setting(names, user):
             #            array.update(({key: value}))
             #    full_data.append(array)
             #print full_data
-                print "name:"+setting["name"]+"passwd:"+setting["passwd"]
+                print "name: "+setting["name"]+" passwd: "+setting["passwd"] \
+                " note: "+str(setting["note"])
 
 
 
