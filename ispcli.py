@@ -65,8 +65,10 @@ def load_email_setting(names, user):
             #    full_data.append(array)
             #print full_data
                 if "note" not in setting: setting["note"] = "None"
+                if "forward" not in setting: setting["forward"] = "Note"
                 print "name: "+setting["name"]+" passwd: "+setting["passwd"] \
-                +" note: " + str(setting["note"])
+                +" note: " + str(setting["note"]) \
+                +" forward: " + setting["forward"]
 
 
 
