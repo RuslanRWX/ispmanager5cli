@@ -64,8 +64,8 @@ def load_email_setting(names, user):
             #            array.update(({key: value}))
             #    full_data.append(array)
             #print full_data
-                if "note" not in setting: setting["note"] = "None"
-                if "forward" not in setting: setting["forward"] = "Note"
+                if "note" not in setting: setting["note"] = ""
+                if "forward" not in setting: setting["forward"] = ""
                 #print "user="+setting["elid"].replace("@", " ")+" passwd="+setting["passwd"] \
                 #+" note: " + str(setting["note"]) \
                 #+" forward: " + setting["forward"]
