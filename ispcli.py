@@ -69,7 +69,7 @@ def load_email_setting(names, user):
                 #print "user="+setting["elid"].replace("@", " ")+" passwd="+setting["passwd"] \
                 #+" note: " + str(setting["note"]) \
                 #+" forward: " + setting["forward"]
-                print " user="+ str(setting["elid"].split("@")[0]), \
+                print " user="+ str(setting["elid"].split("@")[0]) \
                       +" domain="+ str(setting["elid"].split("@")[1]) \
                       +" passwd="+ setting["passwd"] \
                       +" note=" + str(setting["note"]) \
