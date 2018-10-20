@@ -1,5 +1,5 @@
 #
 #
 #
-from main import *
-from app import *
+#from main import *
+#from app import *
