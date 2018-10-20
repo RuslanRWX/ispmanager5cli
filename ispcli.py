@@ -8,4 +8,4 @@
 from ispcli import *
 
 if __name__ == "__main__":
-    main().menu
+    app.main().menu
