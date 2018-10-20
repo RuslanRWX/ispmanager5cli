@@ -3,9 +3,9 @@
 # Version 0.0.2
 
 import sys
-sys.path.append("/usr/lib/python2.7/ispcli")
+sys.path.append("/usr/lib/python2.7/")
 
-import app
+from ispcli.app import * 
 
 if __name__ == "__main__":
     main().menu
