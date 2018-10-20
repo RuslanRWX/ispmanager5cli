@@ -9,7 +9,7 @@ import argparse
 #import main
 #import ispmanagerclass
 
-import ispcli
+from ispcli import *
 
 def main():
     parser = argparse.ArgumentParser(prog='ispcli', description=Help_desc,
