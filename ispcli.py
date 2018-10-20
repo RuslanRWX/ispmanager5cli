@@ -5,7 +5,7 @@
 import sys
 sys.path.append("/usr/lib/python2.7/ispcli")
 
-import ispcli
+import ispcli.app
 
 if __name__ == "__main__":
-    app().main().menu
+    main().menu
