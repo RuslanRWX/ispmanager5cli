@@ -2,13 +2,13 @@
 # Copyright (c) 2018 Ruslan Variushkin,  ruslan@host4.biz
 # Version 0.0.2
 
-import sys
-sys.path.append("/usr/lib/python2.7/ispcli")
-#from ispcli.app import main
-import ispcli
+#import sys
+#sys.path.append("/usr/lib/python2.7/ispcli")
+
+from ispcli.app import main
 
 if __name__ == "__main__":
-    start=ispcli.main()
-    start()
+    start=main()
+    start.menu()
 
 
