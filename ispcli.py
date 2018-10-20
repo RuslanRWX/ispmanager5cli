@@ -4,10 +4,11 @@
 
 import sys
 sys.path.append("/usr/lib/python2.7/ispcli")
-from ispcli.app import *
+#from ispcli.app import main
+import ispcli
 
 if __name__ == "__main__":
-    start=main()
+    start=ispcli.main()
     start()
 
 
