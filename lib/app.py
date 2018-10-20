@@ -2,13 +2,14 @@
 # Copyright (c) 2018 Ruslan Variushkin,  ruslan@host4.biz
 # Version 0.0.2
 
-import sys
-sys.path.append("/usr/lib/python2.7/ispcli")
-from help_text import *
+#import sys
+#sys.path.append("/usr/lib/python2.7/ispcli")
+#from help_text import *
 import argparse
-import main
-import ispmanagerclass
+#import main
+#import ispmanagerclass
 
+import ispcli
 
 def main():
     parser = argparse.ArgumentParser(prog='ispcli', description=Help_desc,
@@ -39,10 +40,10 @@ def main():
     args = parser.parse_args()
 
     if args.users:
-        query = ispmanagerclass.http_query_isp("user")
+        query = ispcli.ispmanagerclass.http_query_isp("user")
         if args.verbosity >=1:
             names = ["user", "name"]
-            return main.load_data(names, query)
+            return ispcli.main.load_data(names, query)
         elif args.users:
             names = ["name"]
             return main.load_data(names, query)
@@ -66,7 +67,7 @@ def main():
     elif args.dbs:
         query = ispmanagerclass.http_query_isp("db")
         names = ["owner","name","key"]
-        return load_data(names, query)
+        return main.load_data(names, query)
     elif args.dbs_users:
         query = ispmanagerclass.http_query_isp("db")
         names = ["owner","name","key"]
