@@ -7,5 +7,5 @@
 import ispcli
 
 if __name__ == "__main__":
-    ispcli.main()
+    ispcli.app.main()
 
