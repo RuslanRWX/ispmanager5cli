@@ -3,7 +3,7 @@
 # Version 0.0.2
 
 
-from .beautifultable import BeautifulTable
+from beautifultable import BeautifulTable
 from .ispmanagerclass import *
 table = BeautifulTable(max_width=300)
 
