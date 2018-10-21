@@ -5,10 +5,10 @@
 import sys
 #sys.path.append("/usr/local/lib/python2.7/dist-packages/ispcli")
 
-from ispcli.app import main
+#from ispcli.app import main
 
 #import sys
 print (sys.path)
 
-if __name__ == "__main__":
-    main()
+#if __name__ == "__main__":
+#    main()
