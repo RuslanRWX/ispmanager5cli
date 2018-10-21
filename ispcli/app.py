@@ -11,7 +11,6 @@ import argparse
 from .main import *
 from .ispmanagerclass import *
 
-main_class = main()
 http_request = http()
 url = url_request()
 
@@ -48,42 +47,42 @@ def main():
         query = http_request.http_query_isp("user")
         if args.verbosity >=1:
             names = ["user", "name"]
-            return main_class.load_data(names, query)
+            return load_data(names, query)
         elif args.users:
             names = ["name"]
-            return main_class.load_data(names, query)
+            return load_data(names, query)
     elif args.domains:
         query = http_request.http_query_isp("domain")
         names = ["user", "name"]
-        return main_class.load_data(names, query)
+        return load_data(names, query)
     elif args.webdomains:
         query = http_request.http_query_isp("webdomain")
         names = ["owner", "name", "docroot", "php",
                  "php_version", "cgi", "active", "ipaddr"]
-        return main_class.load_data(names,query)
+        return load_data(names,query)
     elif args.billing:
         query = url.url_bill + "&func=user&out=xml"
         names = ["account_id","name","email"]
-        return main_class.load_data(names, query)
+        return load_data(names, query)
     elif args.emails:
         query = http_request.http_query_isp("email")
         names = ["owner","name","forward"]
-        return main_class.load_data(names, query)
+        return load_data(names, query)
     elif args.dbs:
         query = http_request.http_query_isp("db")
         names = ["owner","name","key"]
-        return main.load_data(names, query)
+        return load_data(names, query)
     elif args.dbs_users:
         query = http_request.http_query_isp("db")
         names = ["owner","name","key"]
-        return main.load_db_data(names, query)
+        return load_db_data(names, query)
     elif args.email_info:
         query = url.url_isp + "&elid=" + args.email_info + "&func=email.edit&out=xml"
         names = ["name","elid","note","passwd","forward"]
-        return main.load_user_email(names, query)
+        return load_user_email(names, query)
     elif args.user:
         if args.email:
             names = ["owner", "name", "forward"]
-            return main_class.load_email_setting(names,args.user)
+            return load_email_setting(names,args.user)
     else:
         parser.print_help()
