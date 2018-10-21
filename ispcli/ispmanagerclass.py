@@ -67,7 +67,7 @@ class list_data():
         return self.fetch_data(request_http(query))
 
     def db_user(self, key):
-        query = URL + "&func=db.users&out=xml&elid="+key
+        query = url_isp+ "&func=db.users&out=xml&elid="+key
         users=[]
         for name in self.fetch_data(request_http(query)):
             users.append(name["name"])
