@@ -11,8 +11,6 @@ import argparse
 from .main import *
 from .ispmanagerclass import *
 
-http_request = http()
-url = url_request()
 
 
 def main():
@@ -44,7 +42,7 @@ def main():
     args = parser.parse_args()
 
     if args.users:
-        query = http_request.http_query_isp("user")
+        query = http_query_isp("user")
         if args.verbosity >=1:
             names = ["user", "name"]
             return load_data(names, query)
@@ -52,32 +50,32 @@ def main():
             names = ["name"]
             return load_data(names, query)
     elif args.domains:
-        query = http_request.http_query_isp("domain")
+        query = http_query_isp("domain")
         names = ["user", "name"]
         return load_data(names, query)
     elif args.webdomains:
-        query = http_request.http_query_isp("webdomain")
+        query = http_query_isp("webdomain")
         names = ["owner", "name", "docroot", "php",
                  "php_version", "cgi", "active", "ipaddr"]
         return load_data(names,query)
     elif args.billing:
-        query = url.url_bill + "&func=user&out=xml"
+        query = url_bill + "&func=user&out=xml"
         names = ["account_id","name","email"]
         return load_data(names, query)
     elif args.emails:
-        query = http_request.http_query_isp("email")
+        query = http_query_isp("email")
         names = ["owner","name","forward"]
         return load_data(names, query)
     elif args.dbs:
-        query = http_request.http_query_isp("db")
+        query = http_query_isp("db")
         names = ["owner","name","key"]
         return load_data(names, query)
     elif args.dbs_users:
-        query = http_request.http_query_isp("db")
+        query = http_query_isp("db")
         names = ["owner","name","key"]
         return load_db_data(names, query)
     elif args.email_info:
-        query = url.url_isp + "&elid=" + args.email_info + "&func=email.edit&out=xml"
+        query = url_isp + "&elid=" + args.email_info + "&func=email.edit&out=xml"
         names = ["name","elid","note","passwd","forward"]
         return load_user_email(names, query)
     elif args.user:
