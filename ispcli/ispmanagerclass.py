@@ -32,20 +32,20 @@ class url_request(object):
 
 
 
-class http(object):
 
-    def request_http(query):
-        result = urllib2.Request(query, headers=hdr)
-        return minidom.parse(urlopen(result))
 
-    def request_http_xmltodict(query):
-        import xmltodict
-        result = urllib2.Request(query, headers=hdr)
-        return xmltodict.parse(urlopen(result).read())
+def request_http(query):
+    result = urllib2.Request(query, headers=hdr)
+    return minidom.parse(urlopen(result))
 
-    def http_query_isp(func):
-        add = "&func="+ func +"&out=xml"
-        return URL + add
+def request_http_xmltodict(query):
+    import xmltodict
+    result = urllib2.Request(query, headers=hdr)
+    return xmltodict.parse(urlopen(result).read())
+
+def http_query_isp(func):
+    add = "&func="+ func +"&out=xml"
+    return URL + add
 
 
 
