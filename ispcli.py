@@ -5,7 +5,7 @@
 import sys
 #sys.path.append("/usr/local/lib/python2.7/dist-packages/ispcli")
 
-from ispcli import main
+from ispcli.app import main
 
 
 if __name__ == "__main__":
