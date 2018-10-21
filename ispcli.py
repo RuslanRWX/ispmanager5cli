@@ -7,7 +7,7 @@ import sys
 
 from ispcli.app import main
 
-import sys
+#import sys
 print (sys.path)
 
 if __name__ == "__main__":
