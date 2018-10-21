@@ -5,9 +5,9 @@
 #import sys
 #sys.path.append("/usr/local/lib/python2.7/dist-packages/ispcli")
 
-from ispcli.menu import menu
+from ispcli.menu import main
 
 
 if __name__ == "__main__":
-    menu().main()
+    main()
 
