@@ -10,7 +10,7 @@ chmod 500 /usr/sbin/ispcli
 mkdir  $lib_path
 echo y | cp ispcli/help_text.py $lib_path
 echo y | cp ispcli/ispmanagerclass.py $lib_path
-echo y | cp ispcli/app.py $lib_path
+echo y | cp ispcli/menu.py $lib_path
 echo -y | cp  ispcli/main.py $lib_path
 echo -y | cp ispcli/__init__.py $lib_path
 
