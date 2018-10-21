@@ -1,6 +1,6 @@
 #!/bin/bash
 
-lib_path="/usr/lib/python2.7/dist-packages/ispcli"
+lib_path="/usr/lib/python2.7/dist-packages/ispcli/"
 mkdir /etc/ispcli
 cp ispcli.conf /etc/ispcli/
 chmod 500 /etc/ispcli 
