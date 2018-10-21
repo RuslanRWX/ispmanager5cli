@@ -2,15 +2,14 @@
 # Copyright (c) 2018 Ruslan Variushkin,  ruslan@host4.biz
 # Version 0.0.2
 
-#import sys
-#sys.path.append("/usr/lib/python2.7/ispcli")
+
 #from help_text import *
 import argparse
 #import main
 #import ispmanagerclass
 
-from ispcli.main import *
-from ispcli.ispmanagerclass import *
+from .main import *
+from .ispmanagerclass import *
 
 main_class = main()
 http_request = http()
