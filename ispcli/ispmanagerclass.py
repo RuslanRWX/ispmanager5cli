@@ -45,7 +45,7 @@ def request_http_xmltodict(query):
 
 def http_query_isp(func):
     add = "&func="+ func +"&out=xml"
-    return URL + add
+    return url_isp + add
 
 
 
