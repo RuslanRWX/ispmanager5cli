@@ -13,7 +13,7 @@ from .ispmanagerclass import *
 
 class menu():
 
-        def main():
+    def main():
         parser = argparse.ArgumentParser(prog='ispcli', description=Help_desc,
                                      epilog=Hepl_epilog)
         parser.add_argument("--users",
