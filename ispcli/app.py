@@ -3,7 +3,7 @@
 # Version 0.0.2
 
 
-#from help_text import *
+from .help_text import *
 import argparse
 #import main
 #import ispmanagerclass
