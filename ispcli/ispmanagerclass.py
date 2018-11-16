@@ -97,26 +97,24 @@ class list_data():
 
 
 
-class custom_task():
-    def __init__(self)
 
-    def bill_account(self, user):
-        query = url_bill + "&func=vhost&out=xml"
-        doc=request_http(query)
-        for node in doc.getElementsByTagName('elem'):
-            for usernameBill in node.getElementsByTagName('username'):
-                        if usernameBill.firstChild.nodeValue == user:
-                            for account in node.getElementsByTagName('account'):
-                                return account.firstChild.nodeValue
+def bill_account(self, user):
+    query = url_bill + "&func=vhost&out=xml"
+    doc=request_http(query)
+    for node in doc.getElementsByTagName('elem'):
+        for usernameBill in node.getElementsByTagName('username'):
+                    if usernameBill.firstChild.nodeValue == user:
+                        for account in node.getElementsByTagName('account'):
+                            return account.firstChild.nodeValue
 
-    def bill_user(self,account,search):
-        query = url_bill + "&func=user&out=xml"
-        doc=request_http(query)
-        for node in doc.getElementsByTagName('elem'):
-            for accountBill in node.getElementsByTagName('account'):
-                if accountBill.firstChild.nodeValue == account:
-                    for value in node.getElementsByTagName(search):
-                        return  value.firstChild.nodeValue
+def bill_user(self,account,search):
+    query = url_bill + "&func=user&out=xml"
+    doc=request_http(query)
+    for node in doc.getElementsByTagName('elem'):
+        for accountBill in node.getElementsByTagName('account'):
+            if accountBill.firstChild.nodeValue == account:
+                for value in node.getElementsByTagName(search):
+                    return  value.firstChild.nodeValue
 
 
 
