@@ -37,7 +37,7 @@ def main():
                         help=Help_user)
     parser.add_argument("--email",
                         help=Help_email, action='store_true')
-    parser.add_argument('--get-user-email',
+    parser.add_argument('--get_user_email',
                         help=Help_user_get_email, action='store_true')
     args = parser.parse_args()
 
@@ -85,6 +85,7 @@ def main():
     elif args.get_user_email:
         query_bill = url_bill + "&func=user&out=xml"
         quert_isp = url_isp + "&func=vhost&out=xml"
+        load_get_user_email(args.get_user_email, query_bill, quert_isp)
 
         print ("ok")
     else:
