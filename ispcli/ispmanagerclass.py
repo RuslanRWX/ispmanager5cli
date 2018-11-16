@@ -98,12 +98,19 @@ class custom_task():
     def __init__(self, values):
         self.values = values
 
-    def bill_account_id(self, user):
-        return user
+    def bill_account(self, user):
+        query = url_bill + "&func=user&out=xml"
+        doc=request_http(query)
+        for node in doc.getElementsByTagName('elem'):
+         for usernameBill in node.getElementsByTagName('username'):
+                        if usernameBill.firstChild.nodeValue == user:
+                            for account in node.getElementsByTagName('account'):
+                                return account.firstChild.nodeValue
+ #       return user
 
 
 
-query = url_bill + "&func=user&out=xml"
+#query = url_bill + "&func=user&out=xml"
 #        URLBILL = urlBill + "/billmgr?authinfo=" + \
 #            userbill + ":" + passbill + "&func=vhost&out=xml"
 #        res = urlopen(URLBILL)
