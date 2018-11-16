@@ -96,9 +96,7 @@ class list_data():
 
 
 
-
-
-def bill_account(self, user):
+def bill_account(user):
     query = url_bill + "&func=vhost&out=xml"
     doc=request_http(query)
     for node in doc.getElementsByTagName('elem'):
@@ -107,7 +105,7 @@ def bill_account(self, user):
                         for account in node.getElementsByTagName('account'):
                             return account.firstChild.nodeValue
 
-def bill_user(self,account,search):
+def bill_user(account,search):
     query = url_bill + "&func=user&out=xml"
     doc=request_http(query)
     for node in doc.getElementsByTagName('elem'):
