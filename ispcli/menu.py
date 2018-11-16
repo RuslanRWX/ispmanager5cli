@@ -86,7 +86,5 @@ def main():
         query_bill = url_bill + "&func=user&out=xml"
         quert_isp = url_isp + "&func=vhost&out=xml"
         load_get_user_email(args.get_user_email, query_bill, quert_isp)
-
-        print ("ok")
     else:
         parser.print_help()

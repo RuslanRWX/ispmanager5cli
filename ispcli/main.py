@@ -70,5 +70,5 @@ def load_email_setting(names, user):
 
 
 def load_get_user_email(user, quiery_bill, quiery_isp):
-    print user
+    print (user)
 
