@@ -84,6 +84,6 @@ def main():
             return load_email_setting(names,args.user)
     elif args.get_user_email:
         head=(args.get_user_email, "email")
-        load_get_user_email(head, query_bill, quert_isp)
+        load_get_user_email(head)
     else:
         parser.print_help()
