@@ -38,7 +38,7 @@ def main():
     parser.add_argument("--email",
                         help=Help_email, action='store_true')
     parser.add_argument('--get_user_email',
-                        help=Help_user_get_email, action='store_true')
+                        help=Help_user_get_email)
     args = parser.parse_args()
 
     if args.users:
