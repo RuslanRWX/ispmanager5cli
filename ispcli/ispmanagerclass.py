@@ -103,10 +103,10 @@ class custom_task():
         doc=request_http(query)
         for node in doc.getElementsByTagName('elem'):
             for usernameBill in node.getElementsByTagName('username'):
-                return usernameBill
-       #                 if usernameBill.firstChild.nodeValue == user:
-       #                     for account in node.getElementsByTagName('account'):
-        #                        return account.firstChild.nodeValue
+                #return usernameBill
+                        if usernameBill.firstChild.nodeValue == user:
+                            for account in node.getElementsByTagName('account'):
+                                return account.firstChild.nodeValue
  #       return user
 
 
