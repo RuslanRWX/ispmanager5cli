@@ -69,7 +69,7 @@ def load_email_setting(names, user):
                       +" note="+ str(setting["note"].replace(" ", "%20"))
 
 
-def load_get_user_email(user):
-    data=load_data(user)
-    print bill_account_id()
+def load_get_user_email(head, user_isp):
+    data=custom_task(head)
+    print bill_account_id(user_isp)
 

@@ -93,12 +93,17 @@ class list_data():
                 array.update({key: value.encode("utf-8")})
         return [array]
 
+
+class custom_task():
+    def __init__(self, values):
+        self.values = values
+
     def bill_account_id(self, user):
-        print user
+        return user
 
 
 
-
+query = url_bill + "&func=user&out=xml"
 #        URLBILL = urlBill + "/billmgr?authinfo=" + \
 #            userbill + ":" + passbill + "&func=vhost&out=xml"
 #        res = urlopen(URLBILL)

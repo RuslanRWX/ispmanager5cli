@@ -83,7 +83,8 @@ def main():
             names = ["owner", "name", "forward"]
             return load_email_setting(names,args.user)
     elif args.get_user_email:
-        head=(args.get_user_email, "email")
-        load_get_user_email(head)
+        head=("User", "Email")
+        user_isp=args.get_user_email
+        load_get_user_email(head, user_isp)
     else:
         parser.print_help()
