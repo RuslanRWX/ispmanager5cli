@@ -93,27 +93,21 @@ class list_data():
                 array.update({key: value.encode("utf-8")})
         return [array]
 
- #   def (self, account,search):
- #       query = url_bill + "&func=user&out=xml"
 
 
 
-
-
-class custom_task():
-    def __init__(self, values):
-        self.values = values
-
-    def bill_account(self, user):
+def bill_account(self, user_isp):
         query = url_bill + "&func=vhost&out=xml"
-        doc=request_http(query)
-        for node in doc.getElementsByTagName('elem'):
-            for usernameBill in node.getElementsByTagName('username'):
-                        if usernameBill.firstChild.nodeValue == user:
-                            for account in node.getElementsByTagName('account'):
-                                return account.firstChild.nodeValue
+        data = list_data("username")
+        return  data.list(query)
+#        doc=request_http(query)
+#        for node in doc.getElementsByTagName('elem'):
+#            for usernameBill in node.getElementsByTagName('username'):
+#                        if usernameBill.firstChild.nodeValue == user_isp:
+#                            for account in node.getElementsByTagName('account'):
+ #                               return account.firstChild.nodeValue
 
-    def user(self, account,search):
+    def bill_suser(self,account,search):
         query = url_bill + "&func=user&out=xml"
         doc=request_http(query)
         for node in doc.getElementsByTagName('elem'):
