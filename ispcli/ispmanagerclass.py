@@ -93,6 +93,12 @@ class list_data():
                 array.update({key: value.encode("utf-8")})
         return [array]
 
+    def (self, account,search):
+        query = url_bill + "&func=user&out=xml"
+
+
+
+
 
 class custom_task():
     def __init__(self, values):
