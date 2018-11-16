@@ -99,12 +99,11 @@ class custom_task():
         self.values = values
 
     def bill_account(self, user):
-        query = url_bill + "&func=user&out=xml"
+        query = url_bill + "&func=vhost&out=xml"
         doc=request_http(query)
-        return query
-        #for node in doc.getElementsByTagName('elem'):
-         #   for usernameBill in node.getElementsByTagName('username'):
-          #      print usernameBill
+        for node in doc.getElementsByTagName('elem'):
+            for usernameBill in node.getElementsByTagName('username'):
+                return usernameBill
        #                 if usernameBill.firstChild.nodeValue == user:
        #                     for account in node.getElementsByTagName('account'):
         #                        return account.firstChild.nodeValue
