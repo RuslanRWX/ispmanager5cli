@@ -39,6 +39,8 @@ def main():
                         help=Help_user)
     parser.add_argument("--email",
                         help=Help_email, action='store_true')
+    parser.add_argument('--get-user-email',
+                        help=Help_user_get_email, action='store_true')
     args = parser.parse_args()
 
     if args.users:
@@ -82,5 +84,7 @@ def main():
         if args.email:
             names = ["owner", "name", "forward"]
             return load_email_setting(names,args.user)
+    elif args.get_user_email:
+        print ("ok")
     else:
         parser.print_help()
