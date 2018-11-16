@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 # Version 0.0.2
 from xml.dom import minidom
 import ConfigParser
