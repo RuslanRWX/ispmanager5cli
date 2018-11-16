@@ -107,14 +107,14 @@ def bill_account(self, user_isp):
 #                            for account in node.getElementsByTagName('account'):
  #                               return account.firstChild.nodeValue
 
-    def bill_suser(self,account,search):
-        query = url_bill + "&func=user&out=xml"
-        doc=request_http(query)
-        for node in doc.getElementsByTagName('elem'):
-            for accountBill in node.getElementsByTagName('account'):
-                if accountBill.firstChild.nodeValue == account:
-                    for value in node.getElementsByTagName(search):
-                        return  value.firstChild.nodeValue
+#    def bill_suser(self,account,search):
+ #       query = url_bill + "&func=user&out=xml"
+ #       doc=request_http(query)
+ #       for node in doc.getElementsByTagName('elem'):
+ #           for accountBill in node.getElementsByTagName('account'):
+  #              if accountBill.firstChild.nodeValue == account:
+  #                  for value in node.getElementsByTagName(search):
+  #                      return  value.firstChild.nodeValue
 
 
 
