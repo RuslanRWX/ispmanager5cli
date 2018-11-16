@@ -92,3 +92,15 @@ class list_data():
             if value:
                 array.update({key: value.encode("utf-8")})
         return [array]
+
+
+    def bill_account_id(user):
+        URLBILL = urlBill + "/billmgr?authinfo=" + \
+            userbill + ":" + passbill + "&func=vhost&out=xml"
+        res = urlopen(URLBILL)
+        xmldoc = minidom.parse(res)
+        for node in xmldoc.getElementsByTagName('elem'):
+            for usernameBill in node.getElementsByTagName('username'):
+                if usernameBill.firstChild.nodeValue == user:
+                    for account in node.getElementsByTagName('account'):
+                        return account.firstChild.nodeValue
