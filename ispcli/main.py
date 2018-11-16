@@ -73,4 +73,6 @@ def load_get_user_email(head, user_isp):
    # data=custom_task()
     account=bill_account(user_isp)
     #print account
-    print bill_user(account, "email")
+    email=bill_user(account, "email")
+    data=[account, email]
+    return print_data(head, data)
