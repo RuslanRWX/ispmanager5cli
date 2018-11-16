@@ -1,4 +1,5 @@
-# Version 0.0.2
+# Copyright (c) 2018 Ruslan Variushkin,  ruslan@host4.biz
+
 from xml.dom import minidom
 import ConfigParser
 import urllib2

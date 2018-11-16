@@ -1,5 +1,5 @@
 # Copyright (c) 2018 Ruslan Variushkin,  ruslan@host4.biz
-# Version 0.0.2
+
 
 Help_desc = "ispcli works with ispmanager5 through API"
 Hepl_epilog = "Thanks for using"

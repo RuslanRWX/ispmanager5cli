@@ -1,5 +1,4 @@
 # Copyright (c) 2018 Ruslan Variushkin,  ruslan@host4.biz
-# Version 0.0.2
 
 
 from .help_text import *
