@@ -70,7 +70,7 @@ def load_email_setting(names, user):
 
 
 def load_get_user_email(head, user_isp):
-   #data=custom_task()
-    account=bill_account(user_isp)
-    print account
-   # print data.user(account, "email")
+    data=custom_task()
+    account=data.bill_account(user_isp)
+    #print account
+    print data.user(account, "email")
