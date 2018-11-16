@@ -69,5 +69,6 @@ def load_email_setting(names, user):
                       +" note="+ str(setting["note"].replace(" ", "%20"))
 
 
-def load_get_user_email(head, quiery_bill, quiery_isp)
+def load_get_user_email(head, quiery_bill, quiery_isp):
+    print "eew"
 
