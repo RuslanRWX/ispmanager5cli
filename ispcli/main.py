@@ -71,5 +71,5 @@ def load_email_setting(names, user):
 
 def load_get_user_email(head, user_isp):
     data=custom_task(head)
-    print data.bill_account(user_isp)
-
+    account=data.bill_account(user_isp)
+    print data.user(account, "email")
