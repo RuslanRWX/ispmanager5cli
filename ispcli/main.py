@@ -71,5 +71,5 @@ def load_email_setting(names, user):
 
 def load_get_user_email(user, quiery_bill, quiery_isp):
     data=load_data(user)
-    print bill_account_id
+    print bill_account_id()
 
