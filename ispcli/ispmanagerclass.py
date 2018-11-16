@@ -93,17 +93,18 @@ class list_data():
                 array.update({key: value.encode("utf-8")})
         return [array]
 
-class bill():
-    def __init__(self, user_isp):
-        self.user = user_isp
-
     def bill_account_id(self, user):
-        URLBILL = urlBill + "/billmgr?authinfo=" + \
-            userbill + ":" + passbill + "&func=vhost&out=xml"
-        res = urlopen(URLBILL)
-        xmldoc = minidom.parse(res)
-        for node in xmldoc.getElementsByTagName('elem'):
-            for usernameBill in node.getElementsByTagName('username'):
-                if usernameBill.firstChild.nodeValue == user:
-                    for account in node.getElementsByTagName('account'):
-                        return account.firstChild.nodeValue
+        print user
+
+
+
+
+#        URLBILL = urlBill + "/billmgr?authinfo=" + \
+#            userbill + ":" + passbill + "&func=vhost&out=xml"
+#        res = urlopen(URLBILL)
+#        xmldoc = minidom.parse(res)
+#        for node in xmldoc.getElementsByTagName('elem'):
+#            for usernameBill in node.getElementsByTagName('username'):
+#                if usernameBill.firstChild.nodeValue == user:
+#                    for account in node.getElementsByTagName('account'):
+#                        return account.firstChild.nodeValue
