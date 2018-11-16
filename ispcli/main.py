@@ -68,3 +68,6 @@ def load_email_setting(names, user):
                       +" forward=" + str(setting["forward"]) \
                       +" note="+ str(setting["note"].replace(" ", "%20"))
 
+
+def load_get_user_email(head, )
+

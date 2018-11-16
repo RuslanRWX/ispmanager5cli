@@ -83,6 +83,9 @@ def main():
             names = ["owner", "name", "forward"]
             return load_email_setting(names,args.user)
     elif args.get_user_email:
+        query_bill = url_bill + "&func=user&out=xml"
+        quert_isp = url_isp + "&func=vhost&out=xml"
+
         print ("ok")
     else:
         parser.print_help()
