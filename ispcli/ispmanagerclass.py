@@ -96,7 +96,7 @@ class list_data():
 
 
 
-def bill_account(self, user_isp):
+def bill_account(user_isp):
         query = url_bill + "&func=vhost&out=xml"
         data = list_data("username")
         return  data.list(query)
