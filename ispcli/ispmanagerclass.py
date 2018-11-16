@@ -93,8 +93,11 @@ class list_data():
                 array.update({key: value.encode("utf-8")})
         return [array]
 
+class bill():
+    def __init__(self, user_isp):
+        self.user = user_isp
 
-    def bill_account_id(user):
+    def bill_account_id(self, user):
         URLBILL = urlBill + "/billmgr?authinfo=" + \
             userbill + ":" + passbill + "&func=vhost&out=xml"
         res = urlopen(URLBILL)
