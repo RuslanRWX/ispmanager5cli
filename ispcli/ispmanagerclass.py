@@ -108,7 +108,7 @@ class custom_task():
                                 return account.firstChild.nodeValue
 
     def user(self, account,search):
-        query = usr_bill + "&func=user&out=xml"
+        query = url_bill + "&func=user&out=xml"
         doc=request_http(query)
         for node in doc.getElementsByTagName('elem'):
             for accountBill in node.getElementsByTagName('account'):
