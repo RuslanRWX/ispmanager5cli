@@ -91,6 +91,6 @@ def main():
     elif args.user_settings:
         head=("name", "fullname")
         query = http_query_isp("user")
-        load_get_user_email(head, query)
+        load_data(names, query)
     else:
         parser.print_help()
