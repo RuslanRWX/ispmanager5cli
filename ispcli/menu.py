@@ -39,6 +39,8 @@ def main():
                         help=Help_email, action='store_true')
     parser.add_argument('--get_user_email',
                         help=Help_user_get_email)
+    parser.add_argument('--user_settings',
+                        action='store_true')
     args = parser.parse_args()
 
     if args.users:
@@ -86,5 +88,9 @@ def main():
         head=("Client", "Email")
         user_isp=args.get_user_email
         load_get_user_email(head, user_isp)
+    elif args.user_settings:
+        head=("name", "fullname")
+        query = http_query_isp("user")
+        load_get_user_email(head, query)
     else:
         parser.print_help()
