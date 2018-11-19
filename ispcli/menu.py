@@ -91,6 +91,6 @@ def main():
     elif args.user_settings:
         head=("name", "fullname")
         query = http_query_isp("user")
-        load_data(names, query)
+        load_data(head, query)
     else:
         parser.print_help()
