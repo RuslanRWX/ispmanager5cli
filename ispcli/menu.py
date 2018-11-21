@@ -39,7 +39,9 @@ def main():
                         help=Help_email, action='store_true')
     parser.add_argument('--get_user_email',
                         help=Help_user_get_email)
-    parser.add_argument('--web_scripts_wordpress')
+    parser.add_argument('--web_scripts_wordpress',
+                        help=Help_web_scripts_wordpress,
+                        action='store_true')
     args = parser.parse_args()
 
     if args.users:
