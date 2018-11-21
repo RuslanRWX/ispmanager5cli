@@ -24,6 +24,8 @@ def print_data(domains, names):
 
 def load_data(names, query):
     data = list_data(names)
+#    print query
+#    print data.list(query)
  #   domains =getattr(data, func)()
     return print_data(data.list(query), names)
 
