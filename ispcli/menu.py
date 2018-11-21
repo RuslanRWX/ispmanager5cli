@@ -92,7 +92,7 @@ def main():
         user_isp=args.get_user_email
         load_get_user_email(head, user_isp)
     elif args.web_script_packages:
-        pack=args.web_scripts_packages
+        pack=args.web_script_packages
         query=url_isp + "&elid="+pack+"&elname="+pack+"&func=aps.catalog.apps&out=xml"
         head=("name","version","userusable","userdefault","id")
         return load_data(head,query)
