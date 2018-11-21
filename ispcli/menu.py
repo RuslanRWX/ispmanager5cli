@@ -87,7 +87,7 @@ def main():
         head=("Client", "Email")
         user_isp=args.get_user_email
         load_get_user_email(head, user_isp)
-    elif web_scripts_wordpress:
+    elif args.web_scripts_wordpress:
         query= url_isp + "elid=WordPress&elname=WordPress&func=aps.catalog.apps"
         head=("name", "version","userusable","userdefault")
         return load_data(head,query)
