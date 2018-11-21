@@ -42,6 +42,9 @@ def main():
     parser.add_argument('--web_scripts_wordpress',
                         help=Help_web_scripts_wordpress,
                         action='store_true')
+    parser.add_argument('--web-scripts',
+                        help=Help_web_scripts,
+                        action='store_true')
     args = parser.parse_args()
 
     if args.users:
@@ -90,8 +93,12 @@ def main():
         user_isp=args.get_user_email
         load_get_user_email(head, user_isp)
     elif args.web_scripts_wordpress:
-        query= url_isp + "&elid=WordPress&elname=WordPress&func=aps.catalog.apps&out=xml"
+        query=url_isp + "&elid=WordPress&elname=WordPress&func=aps.catalog.apps&out=xml"
         head=("name","version","userusable","userdefault","id")
+        return load_data(head,query)
+    elif args.web_scripts:
+        query=url_isp + "&clickstat=yes&func=aps.catalog&out=xml"
+        head=("name","apps_count","userusable")
         return load_data(head,query)
     else:
         parser.print_help()
