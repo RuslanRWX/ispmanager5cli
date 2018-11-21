@@ -91,7 +91,7 @@ def main():
         load_get_user_email(head, user_isp)
     elif args.web_scripts_wordpress:
         query= url_isp + "&elid=WordPress&elname=WordPress&func=aps.catalog.apps&out=xml"
-        head=("name","version","userusable","userdefault")
+        head=("name","version","userusable","userdefault","id")
         return load_data(head,query)
     else:
         parser.print_help()
