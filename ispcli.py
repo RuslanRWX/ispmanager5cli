@@ -2,7 +2,7 @@
 # Copyright (c) 2018 Ruslan Variushkin,  ruslan@host4.biz
 
 import sys
-sys.path.append("/usr/local/lib/python2.7/dist-packages")
+sys.path.append("/usr/local/lib/python2.7/dist-packages/ispcli")
 
 from ispcli.menu import main
 
