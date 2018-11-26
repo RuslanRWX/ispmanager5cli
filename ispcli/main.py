@@ -78,6 +78,6 @@ def load_get_user_email(head, user_isp):
         data=[{"Client":account.encode("utf-8"), "Email":email}]
         return print_data(data, head)
     else:
-        print "Service is off"
+        print "Shared hosting service is off"
         return
 
