@@ -76,5 +76,6 @@ def load_get_user_email(head, user_isp):
     #print account
     email=bill_user(account, "email")
     data=[{"Client":account.encode("utf-8"), "Email":email}]
+    print data
     return print_data(data, head)
 
