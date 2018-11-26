@@ -75,7 +75,8 @@ def load_get_user_email(head, user_isp):
     account=bill_account(user_isp)
     if account:
         email=bill_user(account, "email")
-        data=[{"Client":account.encode("utf-8"), "Email":email}]
+        id=bill_user(account, "id")
+        data=[{"ID":id,"Client":account.encode("utf-8"), "Email":email}]
         return print_data(data, head)
     else:
         print "Shared hosting service is off"
