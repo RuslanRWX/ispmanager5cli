@@ -11,7 +11,6 @@ else
     pip install BeautifulTable
 fi
 
-
 mkdir /etc/ispcli
 
 if [ -f /etc/ispcli/ispcli.conf ]
@@ -20,7 +19,6 @@ echo "Create backup for ispcli.conf"
 cp /etc/ispcli/ispcli.conf  /etc/ispcli/ispcli.conf.back
 fi
 echo -y | cp ispcli.conf /etc/ispcli/
-
 
 chmod 500 /etc/ispcli 
 
