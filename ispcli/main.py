@@ -1,10 +1,8 @@
 # Copyright (c) 2018 Ruslan Variushkin,  ruslan@host4.biz
 
-
 from beautifultable import BeautifulTable
 from .ispmanagerclass import *
 table = BeautifulTable(max_width=300)
-
 
 
 def print_data(domains, names):
