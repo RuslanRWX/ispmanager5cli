@@ -3,8 +3,12 @@
 if [ -f /etc/debian_version ]
 then
     path="/usr/lib/python3/dist-packages"
+    apt install pip3-python -y
+    pip install BeautifulTable
 else
     path="/usr/lib/python3.6/site-packages"
+    yum install pip3-python -y
+    pip install BeautifulTable
 fi
 
 
