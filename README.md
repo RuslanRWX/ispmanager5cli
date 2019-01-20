@@ -7,7 +7,10 @@ Ability:
  - list of webdomains
  - list of billing users
  - list of emails
- - list of database
+ - list of databases
+ - list of databases and passwords 
+ - list of domain emails 
+ - list of webscripts
 
 
 install
@@ -41,20 +44,33 @@ print help out
 ispcli -h
 
 usage: ispcli [-h] [--users] [-v] [--domains] [--webdomains] [--billing]
-              [--emails] [--dbs] [--dbs_users]
+              [--emails] [--dbs] [--dbs_users] [--email_info EMAIL_INFO]
+              [--user USER] [--email] [--get_user_email GET_USER_EMAIL]
+              [--web_script_packages WEB_SCRIPT_PACKAGES] [--web_scripts] [-V]
 
 ispcli works with ispmanager5 through API
 
 optional arguments:
-  -h, --help       show this help message and exit
-  --users          list all of users
-  -v, --verbosity  increase output verbosity
-  --domains        Domains list
-  --webdomains     List of webdomains and their configurations
-  --billing        All billing information
-  --emails         List of accounts' emails
-  --dbs            List of databases
-  --dbs_users      List of databases and users of databases
+  -h, --help            show this help message and exit
+  --users               list all of users
+  -v, --verbosity       increase output verbosity
+  --domains             Domains list
+  --webdomains          List of webdomains and their configurations
+  --billing             Billing information, users and emails
+  --emails              List of accounts' emails
+  --dbs                 List of databases
+  --dbs_users           List of databases and users of databases
+  --email_info EMAIL_INFO
+                        Email settings
+  --user USER           Specify username
+  --email               List of setting of emails
+  --get_user_email GET_USER_EMAIL
+                        Get user's email
+  --web_script_packages WEB_SCRIPT_PACKAGES
+                        List of script packages, example --web_script_packages
+                        WordPress
+  --web_scripts         List of web-scripts
+  -V, --version         Show version
 
 Thanks for using
 ```

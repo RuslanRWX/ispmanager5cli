@@ -1,9 +1,8 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 # Copyright (c) 2018 Ruslan Variushkin,  ruslan@host4.biz
 
-#import sys
-#sys.path.append("/usr/local/lib/python2.7/dist-packages/ispcli")
-
+import sys
+import ispcli
 from ispcli.menu import main
 
 if __name__ == "__main__":

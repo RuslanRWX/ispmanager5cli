@@ -1,15 +1,15 @@
 # Copyright (c) 2018 Ruslan Variushkin,  ruslan@host4.biz
 
 from xml.dom import minidom
-import ConfigParser
-import urllib2
-from urllib2 import urlopen
+import configparser
+import urllib.request, urllib.error, urllib.parse
+from urllib.request import urlopen
 global URL_IPS
 global User_IPS
 global Pass_ISP
 
 Conf_file = "/etc/ispcli/ispcli.conf"
-config = ConfigParser.ConfigParser()
+config = configparser.ConfigParser()
 config.read(Conf_file)
 
 hdr = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11',
@@ -35,12 +35,12 @@ url_bill = config.get('main','BillURL') + \
 
 
 def request_http(query):
-    result = urllib2.Request(query, headers=hdr)
+    result = urllib.request.Request(query, headers=hdr)
     return minidom.parse(urlopen(result))
 
 def request_http_xmltodict(query):
     import xmltodict
-    result = urllib2.Request(query, headers=hdr)
+    result = urllib.request.Request(query, headers=hdr)
     return xmltodict.parse(urlopen(result).read())
 
 def http_query_isp(func):
@@ -59,7 +59,7 @@ class list_data():
             account={}
             for attr in self.values:
                 for var in node.getElementsByTagName(attr):
-                    account.update({attr:var.firstChild.nodeValue.encode("utf-8")})
+                    account.update({attr:var.firstChild.nodeValue})
             data.append(account)
         return data
 
@@ -90,7 +90,7 @@ class list_data():
         for key in self.values:
             value = doc["doc"][key]
             if value:
-                array.update({key: value.encode("utf-8")})
+                array.update({key: value})
         return [array]
 
 

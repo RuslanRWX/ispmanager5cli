@@ -64,11 +64,11 @@ def load_email_setting(names, user):
                 #print "user="+setting["elid"].replace("@", " ")+" passwd="+setting["passwd"] \
                 #+" note: " + str(setting["note"]) \
                 #+" forward: " + setting["forward"]
-                print " user="+ str(setting["elid"].split("@")[0]) \
+                print(" user="+ str(setting["elid"].split("@")[0]) \
                       +" domain="+ str(setting["elid"].split("@")[1]) \
                       +" pass="+ str(setting["passwd"]) \
                       +" forward=" + str(setting["forward"]) \
-                      +" note="+ str(setting["note"].replace(" ", "%20"))
+                      +" note="+ str(setting["note"].replace(" ", "%20")))
 
 
 def load_get_user_email(head, user_isp):
@@ -76,9 +76,9 @@ def load_get_user_email(head, user_isp):
     if account:
         email=bill_user(account, "email")
         id=bill_user(account, "id")
-        data=[{"ID":id,"Client":account.encode("utf-8"), "Email":email}]
+        data=[{"ID":id,"Client":account, "Email":email}]
         return print_data(data, head)
     else:
-        print "Shared hosting service is off"
+        print("Shared hosting service is off")
         return
 

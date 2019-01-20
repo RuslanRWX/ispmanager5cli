@@ -1,5 +1,5 @@
 # Copyright (c) 2018 Ruslan Variushkin,  ruslan@host4.biz
-
+version = '0.0.5'
 
 Help_desc = "ispcli works with ispmanager5 through API"
 Hepl_epilog = "Thanks for using"
@@ -18,3 +18,4 @@ Help_email = "List of setting of emails"
 Help_user_get_email = "Get user's email"
 Help_web_script_packages = "List of script packages, example --web_script_packages WordPress"
 Help_web_scripts = "List of web-scripts"
+Help_version = "Show version"
