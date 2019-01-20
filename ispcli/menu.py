@@ -1,15 +1,11 @@
 # Copyright (c) 2018 Ruslan Variushkin,  ruslan@host4.biz
 
-
 from .help_text import *
 import argparse
-#import main
-#import ispmanagerclass
 
 from .main import *
 from .ispmanagerclass import *
 
-#class menu():
 
 def main():
     parser = argparse.ArgumentParser(prog='ispcli', description=Help_desc,
@@ -43,6 +39,9 @@ def main():
                         help=Help_web_script_packages)
     parser.add_argument('--web_scripts',
                         help=Help_web_scripts,
+                        action='store_true')
+    parser.add_argument('-V','--version',
+                        help=Help_version,
                         action='store_true')
     args = parser.parse_args()
 
@@ -100,5 +99,7 @@ def main():
         query=url_isp + "&clickstat=yes&func=aps.catalog&out=xml"
         head=("name","apps_count","userusable")
         return load_data(head,query)
+    elif args.version:
+        print (f'Version: {version}')
     else:
         parser.print_help()
