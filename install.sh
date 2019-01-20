@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [  ]
+if [ -f /etc/debian_version ]
 then
     path="/usr/lib/python3/dist-packages"
 else
