@@ -33,4 +33,4 @@ echo -y | cp  ispcli/main.py $path
 echo -y | cp ispcli/__init__.py $path
 
 echo "Success!"
-exit 0 
+exit 0
