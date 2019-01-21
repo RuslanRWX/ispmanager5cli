@@ -2,13 +2,15 @@
 
 if [ -f /etc/debian_version ]
 then
-    path="/usr/lib/python3/dist-packages"
+    path="/usr/lib/python3/dist-packages/ispcli"
     apt install pip3-python -y
     pip install BeautifulTable
 else
-    path="/usr/lib/python3.6/site-packages"
+    path="/usr/lib/python3.6/site-packages/ispcli"
     yum install -y python36
-    yum install alt-python36-pip
+    yum install -y python36-setuptools
+    mkdir -P /usr/local/lib/python3.6/site-packages
+    easy_install-3.6 pip
     pip3 install BeautifulTable
 fi
 
@@ -21,7 +23,8 @@ cp /etc/ispcli/ispcli.conf  /etc/ispcli/ispcli.conf.back
 fi
 echo -y | cp ispcli.conf /etc/ispcli/
 
-chmod 500 /etc/ispcli 
+chmod 500 /etc/ispcli
+chmod 500 /etc/ispcli/ispcli.conf
 
 cp ispcli.py /usr/sbin/ispcli 
 chmod 500 /usr/sbin/ispcli
