@@ -18,10 +18,6 @@ install
 ```
 git clone https://github.com/ruslansvs2/ispmanager5cli.git
 
-pip install BeautifulTable
-
-cd ispmanager5cli
-
 ./install.sh
 
 ```
