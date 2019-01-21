@@ -11,7 +11,8 @@ else
     yum install -y python36-setuptools
     mkdir -P /usr/local/lib/python3.6/site-packages
     easy_install-3.6 pip
-    pip3 install BeautifulTable
+    yum install pip3-python
+    pip install BeautifulTable
 fi
 
 mkdir /etc/ispcli
@@ -24,11 +25,11 @@ fi
 echo -y | cp ispcli.conf /etc/ispcli/
 
 chmod 500 /etc/ispcli
-chmod 500 /etc/ispcli/ispcli.conf
+chmod 500 /etc/ispcli/ispcli
 
 cp ispcli.py /usr/sbin/ispcli 
 chmod 500 /usr/sbin/ispcli
-mkdir  $lib_path
+mkdir  $path
 echo y | cp ispcli/help_text.py $path
 echo y | cp ispcli/ispmanagerclass.py $path
 echo y | cp ispcli/menu.py $path
