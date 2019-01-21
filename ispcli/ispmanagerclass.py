@@ -19,8 +19,6 @@ hdr = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML,
        'Accept-Language': 'en-US,en;q=0.8',
        'Connection': 'keep-alive'}
 
-
-
 url_isp = config.get('main', 'URL_IPS') + \
       "/ispmgr?authinfo=" \
       + config.get('main', 'User_IPS') + \
