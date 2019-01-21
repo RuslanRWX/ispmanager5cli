@@ -11,7 +11,6 @@ else
     yum install -y python36-setuptools
     mkdir -P /usr/local/lib/python3.6/site-packages
     easy_install-3.6 pip
-    yum install pip3-python
     pip install BeautifulTable
 fi
 
