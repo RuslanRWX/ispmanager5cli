@@ -32,8 +32,8 @@ mkdir  $path
 echo y | cp ispcli/help_text.py $path
 echo y | cp ispcli/ispmanagerclass.py $path
 echo y | cp ispcli/menu.py $path
-echo -y | cp  ispcli/main.py $path
-echo -y | cp ispcli/__init__.py $path
+echo y | cp  ispcli/main.py $path
+echo y | cp ispcli/__init__.py $path
 
 echo "Success!"
 exit 0
