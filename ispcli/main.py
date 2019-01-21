@@ -4,7 +4,6 @@ from beautifultable import BeautifulTable
 from .ispmanagerclass import *
 table = BeautifulTable(max_width=300)
 
-
 def print_data(domains, names):
     table.column_headers = names
     for domain in domains:

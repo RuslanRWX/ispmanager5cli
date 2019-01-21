@@ -7,8 +7,9 @@ then
     pip install BeautifulTable
 else
     path="/usr/lib/python3.6/site-packages"
-    yum install pip3-python -y
-    pip install BeautifulTable
+    yum install -y python36
+    yum install alt-python36-pip
+    pip3 install BeautifulTable
 fi
 
 mkdir /etc/ispcli
