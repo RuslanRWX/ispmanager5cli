@@ -9,7 +9,7 @@ else
     path="/usr/lib/python3.6/site-packages/ispcli"
     yum install -y python36
     yum install -y python36-setuptools
-    mkdir -P /usr/local/lib/python3.6/site-packages
+    mkdir -p /usr/local/lib/python3.6/site-packages
     easy_install-3.6 pip
     pip install BeautifulTable
 fi
