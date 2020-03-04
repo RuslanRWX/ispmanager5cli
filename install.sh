@@ -3,7 +3,7 @@
 if [ -f /etc/debian_version ]
 then
     path="/usr/lib/python3/dist-packages/ispcli"
-    apt install pip3-python -y
+    apt install python3-pip -y
     pip install BeautifulTable
 else
     path="/usr/lib/python3.6/site-packages/ispcli"

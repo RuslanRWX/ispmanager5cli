@@ -4,6 +4,8 @@ from xml.dom import minidom
 import configparser
 import urllib.request, urllib.error, urllib.parse
 from urllib.request import urlopen
+import ssl
+
 global URL_IPS
 global User_IPS
 global Pass_ISP
@@ -28,18 +30,25 @@ url_bill = config.get('main','BillURL') + \
        config.get('main', 'UserBill') \
        + ":" + config.get('main','PassBill')
 
+#if INSECURE:
+ctx = ssl.create_default_context()
+ctx.check_hostname = False
+ctx.verify_mode = ssl.CERT_NONE
 
-
-
-
-def request_http(query):
+def request_http(query, insecure):
     result = urllib.request.Request(query, headers=hdr)
-    return minidom.parse(urlopen(result))
+    if insecure:
+        return minidom.parse(urlopen(result, context=ctx))
+    else:
+        return minidom.parse(urlopen(result))
 
-def request_http_xmltodict(query):
+def request_http_xmltodict(query, insecure):
     import xmltodict
     result = urllib.request.Request(query, headers=hdr)
-    return xmltodict.parse(urlopen(result).read())
+    if insecure:
+        return xmltodict.parse(urlopen(result, context=ctx).read())
+    else:
+        return xmltodict.parse(urlopen(result).read())
 
 def http_query_isp(func):
     add = "&func="+ func +"&out=xml"
@@ -48,8 +57,10 @@ def http_query_isp(func):
 
 
 class list_data():
-    def __init__(self, values):
+    def __init__(self, values, *args):
         self.values = values
+        for var in args:
+            self.insecure = var.insecure
 
     def fetch_data(self, xmldoc):
         data=[]
@@ -62,18 +73,18 @@ class list_data():
         return data
 
     def list(self, query):
-        return self.fetch_data(request_http(query))
+        return self.fetch_data(request_http(query, self.insecure))
 
     def db_user(self, key):
         query = url_isp+ "&func=db.users&out=xml&elid="+key
         users=[]
-        for name in self.fetch_data(request_http(query)):
+        for name in self.fetch_data(request_http(query, self.insecure)):
             users.append(name["name"])
         return users
 
     def dbs_users(self, query):
         full_data=[]
-        for data in self.fetch_data(request_http(query)):
+        for data in self.fetch_data(request_http(query, self.insecure)):
             array={}
             name = self.db_user(data["key"])
             array.update({"owner":data["owner"],
@@ -84,7 +95,7 @@ class list_data():
 
     def user_email(self, query):
         array={}
-        doc=request_http_xmltodict(query)
+        doc=request_http_xmltodict(query, self.insecure)
         for key in self.values:
             value = doc["doc"][key]
             if value:
@@ -111,14 +122,6 @@ def bill_user(account,search):
             if accountBill.firstChild.nodeValue == account:
                 for value in node.getElementsByTagName(search):
                     return  value.firstChild.nodeValue
-
-
-
-
-
-
-
-
 
 
 #query = url_bill + "&func=user&out=xml"

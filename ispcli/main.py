@@ -19,11 +19,8 @@ def print_data(domains, names):
         table.append_row([ x for x in data])
     print (table)
 
-def load_data(names, query):
-    data = list_data(names)
-#    print query
-#    print data.list(query)
- #   domains =getattr(data, func)()
+def load_data(names, query, *args):
+    data = list_data(names, *args)
     return print_data(data.list(query), names)
 
 def load_db_data(names, query):

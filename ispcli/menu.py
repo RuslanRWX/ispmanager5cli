@@ -43,37 +43,41 @@ def main():
     parser.add_argument('-V','--version',
                         help=Help_version,
                         action='store_true')
+    parser.add_argument('--insecure',
+                        help=Help_insecure,
+                        action='store_true')
     args = parser.parse_args()
+
 
     if args.users:
         query = http_query_isp("user")
         if args.verbosity >=1:
             names = ["user", "name"]
-            return load_data(names, query)
+            return load_data(names, query, args)
         elif args.users:
             names = ["name"]
-            return load_data(names, query)
+            return load_data(names, query, args)
     elif args.domains:
         query = http_query_isp("domain")
         names = ["user", "name"]
-        return load_data(names, query)
+        return load_data(names, query, args)
     elif args.webdomains:
         query = http_query_isp("webdomain")
         names = ["owner", "name", "docroot", "php",
                  "php_version", "cgi", "active", "ipaddr"]
-        return load_data(names,query)
+        return load_data(names,query, args)
     elif args.billing:
         query = url_bill + "&func=user&out=xml"
         names = ["account_id","name","email"]
-        return load_data(names, query)
+        return load_data(names, query, args)
     elif args.emails:
         query = http_query_isp("email")
         names = ["owner","name","forward"]
-        return load_data(names, query)
+        return load_data(names, query, args)
     elif args.dbs:
         query = http_query_isp("db")
         names = ["owner","name","key"]
-        return load_data(names, query)
+        return load_data(names, query, args)
     elif args.dbs_users:
         query = http_query_isp("db")
         names = ["owner","name","key"]
@@ -94,11 +98,11 @@ def main():
         pack=args.web_script_packages.replace(' ', '%20')
         query=url_isp + '&elid='+pack+'&elname='+pack+'&func=aps.catalog.apps&out=xml'
         head=('name','version','userusable','userdefault','id')
-        return load_data(head,query)
+        return load_data(head, query, args)
     elif args.web_scripts:
         query=url_isp + "&clickstat=yes&func=aps.catalog&out=xml"
         head=("name","apps_count","userusable")
-        return load_data(head,query)
+        return load_data(head, query, args)
     elif args.version:
         print (f'Version: {version}')
     else:
