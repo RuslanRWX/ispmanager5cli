@@ -23,24 +23,24 @@ def load_data(names, query, *args):
     data = list_data(names, *args)
     return print_data(data.list(query), names)
 
-def load_db_data(names, query):
-    data = list_data(names)
+def load_db_data(names, query, *args):
+    data = list_data(names, *args)
     head = ["owner","db_name","db_user"]
     return print_data(data.dbs_users(query), head)
 
-def load_user_email(head, query):
-    data = list_data(head)
+def load_user_email(head, query, *args):
+    data = list_data(head, *args)
     return print_data(data.user_email(query), head)
 
-def load_email_setting(names, user):
+def load_email_setting(names, user, *args):
     query = http_query_isp("email")
-    data = list_data(names)
+    data = list_data(names, *args)
     api_result = data.list(query)
     head = ["name", "elid", "note", "passwd", "forward"]
     full_data = []
     for api_data in api_result:
         if api_data["owner"] == user:
-            data = list_data(head)
+            data = list_data(head, *args)
             query = url_isp + "&elid=" + api_data["name"] + "&func=email.edit&out=xml"
             #print (str(api_data["owner"])+" "+str(api_data["name"]))
             setting_info_by_user = data.user_email(query)

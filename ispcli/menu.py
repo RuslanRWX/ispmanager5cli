@@ -81,15 +81,15 @@ def main():
     elif args.dbs_users:
         query = http_query_isp("db")
         names = ["owner","name","key"]
-        return load_db_data(names, query)
+        return load_db_data(names, query, args)
     elif args.email_info:
         query = url_isp + "&elid=" + args.email_info + "&func=email.edit&out=xml"
         names = ["name","elid","note","passwd","forward"]
-        return load_user_email(names, query)
+        return load_user_email(names, query, args)
     elif args.user:
         if args.email:
             names = ["owner", "name", "forward"]
-            return load_email_setting(names,args.user)
+            return load_email_setting(names,args.user, args)
     elif args.get_user_email:
         head=("ID", "Client", "Email")
         user_isp=args.get_user_email
