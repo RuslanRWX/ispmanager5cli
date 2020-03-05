@@ -93,7 +93,7 @@ def main():
     elif args.get_user_email:
         head=("ID", "Client", "Email")
         user_isp=args.get_user_email
-        load_get_user_email(head, user_isp)
+        load_get_user_email(head, user_isp, args)
     elif args.web_script_packages:
         pack=args.web_script_packages.replace(' ', '%20')
         query=url_isp + '&elid='+pack+'&elname='+pack+'&func=aps.catalog.apps&out=xml'

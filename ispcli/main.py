@@ -65,11 +65,11 @@ def load_email_setting(names, user, *args):
                       +" note="+ str(setting["note"].replace(" ", "%20")))
 
 
-def load_get_user_email(head, user_isp):
-    account=bill_account(user_isp)
+def load_get_user_email(head, user_isp, *args):
+    account=bill_account(user_isp, *args)
     if account:
-        email=bill_user(account, "email")
-        id=bill_user(account, "id")
+        email=bill_user(account, "email", *args)
+        id=bill_user(account, "id", *args)
         data=[{"ID":id,"Client":account, "Email":email}]
         return print_data(data, head)
     else:

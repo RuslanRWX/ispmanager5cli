@@ -105,18 +105,18 @@ class list_data():
 
 
 
-def bill_account(user):
+def bill_account(user, *args):
     query = url_bill + "&func=vhost&out=xml"
-    doc=request_http(query)
+    doc=request_http(query, *args)
     for node in doc.getElementsByTagName('elem'):
         for usernameBill in node.getElementsByTagName('username'):
                     if usernameBill.firstChild.nodeValue == user:
                         for account in node.getElementsByTagName('account'):
                             return account.firstChild.nodeValue
 
-def bill_user(account,search):
+def bill_user(account,search, *args):
     query = url_bill + "&func=user&out=xml"
-    doc=request_http(query)
+    doc=request_http(query, *args)
     for node in doc.getElementsByTagName('elem'):
         for accountBill in node.getElementsByTagName('account'):
             if accountBill.firstChild.nodeValue == account:
