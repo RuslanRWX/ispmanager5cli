@@ -16,7 +16,7 @@ Ability:
 install
 
 ```
-git clone https://github.com/ruslansvs2/ispmanager5cli.git
+git clone https://github.com/RuslanRWX/ispmanager5cli.git
 
 ./install.sh
 
